@@ -1,0 +1,26 @@
+package com.array;
+//为了将一个无序数组排序，先将其拷贝到一个有序链表中，然后从有序链表拷出打到排序的目的
+public class ListInsertionSortApp {
+	public static void main(String[] args) {
+		Link[] linkArray = new Link[10];
+		for (int i = 0; i < 10; i++) {
+			int n = (int) (java.lang.Math.random() * 99);
+			Link newLink = new Link(n);
+			linkArray[i] = newLink;
+		}
+		System.out.println("未排序之前：");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(linkArray[i].dData + " ");
+		}
+		System.out.println("");
+		SortedList list = new SortedList(linkArray);
+		for (int i = 0; i < 10; i++) {
+			linkArray[i] = list.remove();
+		}
+		System.out.println("排序之后：");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(linkArray[i].dData + " ");
+		}
+		System.out.println("");
+	}
+}

@@ -1,0 +1,43 @@
+
+public class DoublyLinkedList {
+	private Link first;
+	private Link last;
+
+	public DoublyLinkedList() {
+		first = null;
+		last = null;
+	}
+
+	public boolean isEmpty() {
+		return first == null;
+	}
+
+	public void insertFirst(long dd) {
+		Link newLink = new Link(dd);
+		if (isEmpty())
+			last = newLink;
+		else
+			first.previous = newLink;
+		newLink.next = first;
+		first = newLink;
+	}
+	public void insertLast(long dd){
+		Link newLink=new Link(dd);
+		if(isEmpty())
+			first=newLink;
+		else	
+			last.next=newLink;
+		newLink.previous=last;
+		last=newLink;
+	}
+	public Link deleteFirst()
+	{
+		Link temp=first;
+		if(first.next==null)
+			last=null;
+		else
+			first.next.previous=null;
+		first=first.next;
+		return temp;
+	}
+}

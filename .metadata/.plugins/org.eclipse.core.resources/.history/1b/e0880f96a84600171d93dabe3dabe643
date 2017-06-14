@@ -1,0 +1,29 @@
+
+public class BinarySearch2 {
+	public static int search(int a[], int low, int high, int searchKey) {
+		while (true) {
+			int mid = (high + low) / 2;
+
+			if (a[mid] == searchKey) {
+				return mid;
+			}
+			if (low >= high) {
+				return -1;
+			} else{
+
+				if (searchKey < a[mid]) {
+				return high = mid - 1;
+			} else (searchKey > a[mid]) {
+				return low = mid + 1;
+			}
+			}
+			return -1;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		int a[] = { 33, 22, 44, 11, 77, 55, 88 };
+		System.out.println(search(a, 0, a.length - 1, 88));
+	}
+}

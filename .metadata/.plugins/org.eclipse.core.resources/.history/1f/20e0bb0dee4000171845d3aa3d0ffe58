@@ -1,0 +1,49 @@
+package com.test;
+
+public class PriorityQueue {
+	private int maxSize;
+	private long[] queueArray;
+	private int nItems;
+
+	public PriorityQueue(int s) {
+		maxSize = s;
+		queueArray = new long[maxSize];
+		nItems = 0;
+	}
+
+	public void insert(long item) {
+		int j;
+		if (nItems == 0)
+			queueArray[nItems++] = item;
+		else {
+			for (j = nItems - 1; j >= 0; j--) {
+				if (item > queueArray[j])
+					queueArray[j + 1] = queueArray[j];// 优先队列就是将大的数放下面，小的数字放上面
+				else
+					break;// 当插入的数字小于队列中的数时跳出循环
+			}
+			queueArray[j + 1] = item;// 因为前面取的那个j是queueArray[j]这时是大于item的，所以要将item赋给queueArray[j+1]
+			nItems++;
+		}
+	}
+	public long remove()
+	{
+		return queueArray[--nItems];
+	}
+	public long peekMin()
+	{
+		return queueArray[nItems-1];
+	}
+	public long peekMax()
+	{
+		return queueArray[nItems=0];
+	}
+	public boolean isFull()
+	{
+		return (nItems==maxSize);
+	}
+	public boolean isEmpty()
+	{
+		return (nItems==0);
+	}
+}

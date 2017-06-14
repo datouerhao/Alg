@@ -1,0 +1,27 @@
+package com.array;
+
+public class ListInsertionSortApp {
+	public static void main(String[] args) {
+		Link[] linkArray = new Link[10];
+		for (int i = 0; i < 10; i++) {
+			int n = (int) (java.lang.Math.random() * 99);
+			Link newLink = new Link(n);
+			linkArray[i] = newLink;
+		}
+		System.out.println("未排序之前：");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(linkArray[i].dData + " ");
+		}
+		System.out.println("");
+		SortedList list=new SortedList(linkArray);
+		for(int i=0;i<10;i++)
+		{
+			linkArray[i]=list.remove();
+		}
+		System.out.print("排序之后：");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(linkArray[i].dData + " ");
+		}
+		System.out.println("");
+	}
+}

@@ -1,0 +1,22 @@
+package com.jedis;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+
+public class JedisDemo {
+	public static void main(String args[]) {
+		JedisPoolConfig config = new JedisPoolConfig();// 获得连接池配置对象
+		config.setMaxActive(30);
+		config.setMaxIdle(10);
+		JedisPool jedisPool = new JedisPool(config, "localhost", 6379);
+		Jedis jedis = null;
+		try {
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+		}
+	}
+}

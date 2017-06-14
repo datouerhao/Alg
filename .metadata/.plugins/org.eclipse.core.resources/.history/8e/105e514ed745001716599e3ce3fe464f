@@ -1,0 +1,19 @@
+
+public class SortedList {
+	private Link first;
+
+	public SortedList() {
+		first = null;
+	}
+
+	public boolean isEmpty() {
+		return first == null;
+	}
+
+	public void insert(long key){
+		Link newLink=new Link(key);
+		Link previouse=null;
+		Link current=first;
+		while(current!=null&&key>current.dData)
+	}
+}

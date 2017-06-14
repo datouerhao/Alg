@@ -1,0 +1,10 @@
+
+public class SortedList {
+	private Link first;
+	public SortedList(){
+		first=null;
+	}
+	public boolean isEmpty(){
+		return first==null;
+	}
+}
